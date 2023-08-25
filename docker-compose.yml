@@ -1,0 +1,26 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./app/data:/app/data
+    depends_on:
+      - monetdb
+  monetdb:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - monetdb_data:/var/lib/monetdb
+    ports:
+      - "50001:50000"
+    env_file:
+      - .env
+    environment:
+      - MONET_DBFARM=/var/lib/monetdb/dbfarm
+      - MONET_DATABASE=transformer-btc
+      - MONETDB_PASSWORD=${MONETDB_PASSWORD}
+volumes:
+  monetdb_data:
