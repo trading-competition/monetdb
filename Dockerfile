@@ -28,7 +28,7 @@ EXPOSE 50000
 VOLUME /var/lib/monetdb
 
 # Copy initialization script
-COPY ./init-monetdb.sh /init-monetdb.sh
+COPY ./init-monetdb.sh ./init-monetdb.sh
 
 # Make the script executable
 RUN chmod +x /init-monetdb.sh
