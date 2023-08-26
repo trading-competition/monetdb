@@ -9,7 +9,7 @@ on:
 env:
   DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
   DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
-  DOCKER_IMAGE_NAME: erwinvink/transformer-btc
+  DOCKER_IMAGE_NAME: erwinvink/monetdb
 
 jobs:
   build_and_push_image:
