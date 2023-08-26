@@ -1,0 +1,2 @@
+DOCKER_IMAGE_NAME=monetdb
+VERSION=0.1.0
