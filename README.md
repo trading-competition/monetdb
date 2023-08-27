@@ -15,17 +15,10 @@ services:
       - "50000:50000"
     env_file:
       - .env
-    environment:
-      - MONET_DBFARM=/var/lib/monetdb/dbfarm
-      - MONET_DATABASE=transformer-btc
-      - MONETDB_PASSWORD=${MONETDB_PASSWORD}
 volumes:
   monetdb_data:
 ```
-3. Create a file called ".env" in the transformer folder and paste the following code in it:
-```env
-MONETDB_PASSWORD=****
-```
+3. Create a file called ".env" in the transformer folder and paste the lines from the .env_template file in it. Than fill in the password for the monetdb database:
 4. Bring the monetdb database online by running the following command: `docker-compose up --buid -d`
 5. Check if the database is running by running the following command: `docker-compose ps`. You should see something like this:
 ```bash
